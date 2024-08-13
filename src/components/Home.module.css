@@ -1,0 +1,26 @@
+* {
+    font-family: Roboto;
+}
+
+.container {
+    background-color: #DAE5F5;
+    height: 100vh;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: 0.02em;
+}
+
+.end {
+    display: flex;
+    position: absolute;
+    bottom: 20px; 
+    font-size: 18px;
+    font-weight: 400;
+    align-items: center;
+    padding: 10px; 
+}

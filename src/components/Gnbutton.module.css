@@ -1,0 +1,27 @@
+
+.button{
+    /* width: 100%; */
+    height: auto;
+    display: flex;
+    /* background-color: red; */
+    /* justify-content: center; */
+    align-items: center;
+    font-size: 25px;
+    padding: 10px 0px 10px 30px;
+    gap: 20px;
+    cursor: pointer;
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 300px;
+    text-align: left;
+
+    
+}
+.initials{
+    border-radius: 50%;
+    padding: 15px;
+    width: 60px;
+    height: auto;
+    text-align: center;
+    color: #fff;
+}

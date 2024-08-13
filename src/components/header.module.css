@@ -1,0 +1,19 @@
+.button{
+    /* width: 100%; */
+    height: auto;
+    display: flex;
+    background-color: #001F8B;
+    align-items: center;
+    font-size: 25px;
+    padding: 8px 5px ;
+    gap: 10px;
+    cursor: pointer;
+    
+}
+.initials{
+    border-radius: 50%;
+    padding: 15px;
+    width: 60px;
+    height: auto;
+    text-align: center;
+}
