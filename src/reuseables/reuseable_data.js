@@ -8,7 +8,7 @@ function formatTime(date) {
   const minutes = date.getMinutes();
   const ampm = hours >= 12 ? 'PM' : 'AM';
   hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
+  hours = hours ? hours : 12; 
   const strMinutes = minutes < 10 ? '0' + minutes : minutes;
   return `${hours}:${strMinutes} ${ampm}`;
 }
@@ -18,8 +18,8 @@ function formatDate(date) {
   const monthIndex = date.getMonth();
   const year = date.getFullYear();
   const monthNames = [
-    'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'
+    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+    'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'
   ];
   return `${day} ${monthNames[monthIndex]} ${year}`;
 }

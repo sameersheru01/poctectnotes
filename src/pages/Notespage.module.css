@@ -10,7 +10,6 @@
     position: relative;
     min-width: 150px;
     flex-shrink: 0;
-    /* overflow-y: auto; */
 }
 .right{
     flex: 1;
@@ -18,22 +17,22 @@
 }
 .add {
     position: sticky;
-    bottom: 20px; /* Distance from the bottom */
-    left: 50vh; /* Distance from the right */   
-    padding: 10px 20px; /* Adjust padding to suit your design */
-    background-color: #007bff; /* Button color */
-    color: white; /* Button text color */
+    bottom: 20px; 
+    left: 50vh; 
+    padding: 10px 20px; 
+    background-color: #007bff; 
+    color: white; 
     border: none;
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 5px; 
     cursor: pointer;
-    font-size: 1.5em; /* Adjust font size */
-    transition: background-color 0.3s; /* Smooth background color transition */
-    z-index: 10; /* Ensure the button is on top of other elements */
+    font-size: 1.5em;
+    transition: background-color 0.3s;
+    z-index: 10; 
   }
   @media only screen and (max-width: 768px) {
     .mobile{display: none;}
     .left, .right {
-        width: 100%; /* Full width on mobile */
-        height: 100vh; /* Half height on mobile if both sections are visible */
+        width: 100%; 
+        height: 100vh; 
     }
   }

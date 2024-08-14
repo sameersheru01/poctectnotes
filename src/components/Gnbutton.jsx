@@ -17,9 +17,6 @@ export default function Gnbutton({ profile, sendgp }) {
     backgroundColor: bgcolor,
   };
 
-  // const handleButtonClick = () => {
-  //   sendgp(profile); // Pass the entire profile object
-  // };
 
 
   return (

@@ -6,7 +6,6 @@ export const AppProvider = ({ children }) => {
   const [groupnames, setGroupNames] = useState(
     JSON.parse(localStorage.getItem("groupnames")) || []
   );
-  // const [notes, setNotes] = useState([]);
   const [mobileview, setMobileview] = useState(window.innerWidth <= 768);
   const [hide, setHide] = useState(false);
   const [selectedgp, setSelectedgp] = useState(null);

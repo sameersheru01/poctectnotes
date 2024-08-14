@@ -4,6 +4,7 @@ import { AppContext } from '../context/AppContext';
 import Header from './Header';
 import { IoSendSharp } from 'react-icons/io5';
 import { getFormattedDateTime } from '../reuseables/reuseable_data';
+import { GoDotFill } from 'react-icons/go';
 
 export default function Chatview({ selectedgroup }) {
   const [notes, setNotes] = useState([]);
@@ -11,9 +12,8 @@ export default function Chatview({ selectedgroup }) {
   const { groupnames, setGroupNames } = useContext(AppContext);
   const { date, time } = getFormattedDateTime();
 
-  // Handle adding a new note
   const handleAddNote = useCallback(() => {
-    if (newnote.trim() === '') return; // Avoid adding empty notes
+    if (newnote.trim() === '') return; 
 
     const data = { newnote, date, time };
 
@@ -22,7 +22,7 @@ export default function Chatview({ selectedgroup }) {
       return updatedNotes;
     });
 
-    // Update context and local storage outside of render
+    
     const updatedGroups = groupnames.map(group => {
       if (group.newgroupname === selectedgroup.newgroupname) {
         return { ...group, notes: [...notes, data] };
@@ -33,14 +33,21 @@ export default function Chatview({ selectedgroup }) {
     setGroupNames(updatedGroups);
     localStorage.setItem('groupnames', JSON.stringify(updatedGroups));
 
-    setNewnote(''); // Clear the input field
+    setNewnote(''); 
   }, [newnote, date, time, groupnames, selectedgroup.newgroupname, setGroupNames, notes]);
 
-  // Load notes when selected group changes
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault(); 
+      handleAddNote(); 
+    }
+  }
+
+  
   useEffect(() => {
     const currentGroup = groupnames.find(group => group.newgroupname === selectedgroup.newgroupname);
     if (currentGroup) {
-      setNotes(currentGroup.notes || []); // Ensure notes is always an array
+      setNotes(currentGroup.notes || []); 
     }
   }, [selectedgroup, groupnames]);
 
@@ -54,7 +61,7 @@ export default function Chatview({ selectedgroup }) {
           {notes.map((note, index) => (
             <div key={index} className={styles.note}>
               <p>{note.newnote}</p>
-              <p className={styles.meta}><i>{note.date} . {note.time}</i></p>
+              <div className={styles.meta}><span>{note.date}  <span className={styles.dot}><GoDotFill /></span> {note.time}</span></div>
             </div>
           ))}
         </div>
@@ -64,6 +71,7 @@ export default function Chatview({ selectedgroup }) {
           placeholder='Here’s the sample text for sample work'
           value={newnote}
           onChange={(e) => setNewnote(e.target.value)}
+          onKeyDown={handleKeyDown}
         ></textarea>
         <IoSendSharp onClick={handleAddNote} className={`${styles.svg} ${newnote.trim() === '' && styles.svg1}`} disabled={newnote.trim() === ''}/>
       </div>

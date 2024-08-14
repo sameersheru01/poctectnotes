@@ -25,7 +25,7 @@ const Addprofile = ({ onClose }) => {
     }
   }, [onClose]);
 
-  // Setup and cleanup event listener
+  
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
