@@ -114,4 +114,8 @@ textarea::placeholder{
   .footer{
     height: 150px;
   }
+  textarea::placeholder{
+    font-size: 15px;
+  }
+
 }

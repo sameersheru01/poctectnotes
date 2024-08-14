@@ -84,10 +84,12 @@ input[type="text"] {
   .content{
     font-size: 15px;
     line-height: 20px;
+    text-align: left;
   }
   .inner button {
-    justify-content: center;
-      width: 120px; 
+    width: 250px; 
+    margin: 0;
+    align-self: center;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -95,7 +97,7 @@ input[type="text"] {
     font-size: 15px;
     line-height: 15px;
     /* gap: 10px; */
-
   }
+
 }
 
