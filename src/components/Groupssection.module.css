@@ -2,8 +2,8 @@
     position: -webkit-sticky;
     position: sticky;
     bottom: 20px;
-    left: 250PX;
-  /* right: 20px; */
+    left: 280px;
+    /* right: 20px; */
   /* margin-left: auto; */
     padding: 10px 20px; 
     background-color: #16008B; 
@@ -45,6 +45,7 @@
     overflow-y: auto;
     align-items: center;
     position: relative;
+    /* max-height: 250px; */
 }
 @media only screen and (max-width: 768px) {
   .mobile{display: none;}
@@ -55,7 +56,7 @@
   .add{
     position: sticky;
     bottom: 20px;
-    left: 300px;
+    left: 310px;
   }
 }
 .list::-webkit-scrollbar {

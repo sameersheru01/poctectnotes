@@ -1,7 +1,5 @@
-import React, { useContext, useState } from 'react';
-import { IoArrowBack } from "react-icons/io5";
+import React from 'react';
 import styles from './Gnbutton.module.css';
-import { AppContext } from '../context/AppContext';
 import { GetInitials } from '../reuseables/reuseable_data';
 
 export default function Gnbutton({ profile, sendgp, isActive }) {
