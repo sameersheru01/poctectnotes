@@ -9,6 +9,7 @@ export const AppProvider = ({ children }) => {
   const [mobileview, setMobileview] = useState(window.innerWidth <= 768);
   const [hide, setHide] = useState(false);
   const [selectedgp, setSelectedgp] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   useEffect(() => {
     localStorage.setItem("groupnames", JSON.stringify(groupnames));
@@ -31,7 +32,7 @@ export const AppProvider = ({ children }) => {
   
 
   return (
-    <AppContext.Provider value={{ groupnames, setGroupNames, mobileview, setMobileview, hide, setHide, selectedgp, setSelectedgp }}>
+    <AppContext.Provider value={{ groupnames, setGroupNames, mobileview, setMobileview, hide, setHide, selectedgp, setSelectedgp, activeIndex, setActiveIndex, }}>
       {children}
     </AppContext.Provider>
   );

@@ -1,11 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { IoArrowBack } from "react-icons/io5";
 import styles from './Gnbutton.module.css';
 import { AppContext } from '../context/AppContext';
 import { GetInitials } from '../reuseables/reuseable_data';
 
-export default function Gnbutton({ profile, sendgp }) {
-
+export default function Gnbutton({ profile, sendgp, isActive }) {
 
   const groupname = profile.newgroupname ;
   const bgcolor = profile.selectedcolour ;
@@ -20,7 +19,7 @@ export default function Gnbutton({ profile, sendgp }) {
 
 
   return (
-    <div className={styles.button} onClick={()=>sendgp(profile)}>
+    <div className={`${styles.button} ${isActive ? styles.active : ''}`} onClick={()=>{sendgp(profile)}}>
 
       <div className={styles.initials} style={buttonStyle}>
         {initials}

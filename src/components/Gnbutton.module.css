@@ -11,8 +11,11 @@
     font-size: 22px;
     font-weight: 300px;
     text-align: left;
-
-    
+    /* background-color: aqua; */
+    border-radius: 10px;
+}
+.active{
+    background-color: #2F2F2F2B;
 }
 .initials{
     border-radius: 50%;

@@ -5,7 +5,7 @@ import { IoArrowBack } from 'react-icons/io5';
 import { GetInitials } from '../reuseables/reuseable_data';
 
 export default function Header({groupname,bgcolor}) {
-    const { mobileview, hide, setHide } = useContext(AppContext);
+    const { mobileview, hide, setHide, setActiveIndex } = useContext(AppContext);
     const initials = GetInitials(groupname)
     const buttonStyle = {
         backgroundColor: bgcolor,
@@ -13,7 +13,7 @@ export default function Header({groupname,bgcolor}) {
   return (
     <div className={styles.button}>
       {mobileview && hide && (
-        <div onClick={(e)=>{setHide(false)}}>
+        <div onClick={(e)=>{setHide(false);setActiveIndex(null)}}>
           <IoArrowBack />
         </div>
       )}
